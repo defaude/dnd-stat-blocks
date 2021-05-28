@@ -4,7 +4,7 @@ export default {
     /* ... */
   },
   plugins: [
-    /* ... */
+    '@snowpack/plugin-vue'
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
