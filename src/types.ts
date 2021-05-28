@@ -1,3 +1,3 @@
-export type StatBlock = {
+export type StatBlockData = {
     color: string;
 };
