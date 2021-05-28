@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="stat-block">
     <section>
       <h1>Gnome Squidling</h1>
       <em class="description">Small aberration, unaligned</em>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
-article {
+.stat-block {
   --red: #700601;
   background-image: url(/parchment.jpg);
   background-size: cover;
@@ -43,13 +43,13 @@ article {
   &::after {
     top: 100%;
   }
-}
 
-h1 {
-  font-family: serif;
-  font-size: 1.8em;
-  color: var(--red);
-  font-variant: small-caps;
-  margin: .5em 0;
+  h1 {
+    font-family: serif;
+    font-size: 1.8em;
+    color: var(--red);
+    font-variant: small-caps;
+    margin: .5em 0;
+  }
 }
 </style>
