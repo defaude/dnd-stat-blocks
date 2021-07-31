@@ -1,50 +1,79 @@
 <template>
   <article class="stat-block">
     <section>
-      <h1>Kréa (Fox)</h1>
-      <em>Tiny beast, unaligned</em>
+      <h1>{{ title }}</h1>
+      <em>{{ description }}</em>
     </section>
 
     <section class="stats">
-      <div><strong>Armor Class</strong> 13</div>
-      <div><strong>Hit Points</strong> 5 (2d4)</div>
-      <div><strong>Speed</strong> 30ft., burrow 5ft.</div>
+      <SingleStat v-for="(stat, index) in primaryStats" :key="index" :name="stat.name" :value="stat.value" />
     </section>
 
     <section class="stats">
       <div class="attributes">
-        <div><div><strong>STR</strong></div><div>2 (-4)</div></div>
-        <div><div><strong>DEX</strong></div><div>16 (+3)</div></div>
-        <div><div><strong>CON</strong></div><div>11 (+0)</div></div>
-        <div><div><strong>INT</strong></div><div>3 (-4)</div></div>
-        <div><div><strong>WIS</strong></div><div>13 (+1)</div></div>
-        <div><div><strong>CHA</strong></div><div>10 (-2)</div></div>
+        <SingleAttribute v-for="a in attributes" :key="a.attribute" :name="a.attribute" :value="a.value" />
       </div>
     </section>
 
     <section class="stats">
-      <div><strong>Skills</strong> Perception +3, Stealth +5</div>
-      <div><strong>Senses</strong> Darkvision 60ft., passive Perception 13</div>
-      <div><strong>Languages</strong> none</div>
-      <div><strong>Challenge</strong> 1/8 (10 XP)</div>
+      <SingleStat v-for="(stat, index) in secondaryStats" :key="index" :name="stat.name" :value="stat.value" />
     </section>
 
     <section>
-      <div><em><strong>Keen Hearing.</strong></em> The fox has advantage on Wisdom (Perception) checks that rely on hearing.</div>
-
-      <h2>Actions</h2>
-
-      <div><em><strong>Bite.</strong> Melee weapon attack:</em> T+5 to hit, reach 5 ft., one creature. <em>Hit:</em> 1d4 piercing damage.</div>
+      <Block v-for="(block, index) in blocks" :key="index" :data="block" />
     </section>
   </article>
 </template>
 
 <script lang="ts">
-export default {
-  setup() {
-    return {};
+import {defineComponent} from "vue";
+import SingleStat from "./SingleStat.vue";
+import SingleAttribute from "./SingleAttribute.vue";
+import Block from "./Block.vue";
+
+type Stat = { name: string; value: string; };
+
+export default defineComponent({
+  components: {Block, SingleAttribute, SingleStat},
+  data() {
+    return {
+      title: "Kréa (Fox)",
+      description: "Tiny beast, unaligned",
+      primaryStats: [
+        {name: "Armor Class", value: "13"},
+        {name: "Hit Points", value: "5 (2d4)"},
+        {name: "Speed", value: "30 ft., burrow 5ft."}
+      ],
+      secondaryStats: [
+        {name: "Skills", value: "Perception +3, Stealth +5"},
+        {name: "Senses", value: "Darkvision 60ft., passive Perception 13"},
+        {name: "Languages", value: "none"},
+        {name: "Challenge", value: "1/8 (10 XP)"}
+      ],
+      attributes: [
+        {attribute: "STR", value: 2},
+        {attribute: "DEX", value: 16},
+        {attribute: "CON", value: 11},
+        {attribute: "INT", value: 3},
+        {attribute: "WIS", value: 13},
+        {attribute: "CHA", value: 10}
+      ],
+      blocks: [
+        {
+          texts: [
+            '***Keen Hearing.*** The fox has advantage on Wisdom (Perception) checks that rely on hearing.'
+          ]
+        },
+        {
+          heading: 'Actions',
+          texts: [
+            '***Bite.*** *Melee weapon attack:* +5 to hit, react 5 ft., one creature. *Hit:* 1d4 piercing damage.'
+          ]
+        }
+      ]
+    }
   }
-}
+});
 </script>
 
 <style lang="scss">
@@ -54,27 +83,11 @@ export default {
   background-size: cover;
   box-shadow: 0 0 10px 1px silver;
   position: relative;
-  padding: .5em;
-  max-width: 960px;
-
-  &::before, &::after {
-    content: " ";
-    position: absolute;
-    top: -14px;
-    left: -5px;
-    right: -5px;
-    height: 6px;
-    border-top: 4px solid var(--red);
-    border-right: 5px solid white;
-    border-bottom: 4px solid var(--red);
-    border-left: 5px solid white;
-    background-image: url(/parchment.jpg);
-    background-size: cover;
-  }
-
-  &::after {
-    top: 100%;
-  }
+  padding: .5rem;
+  max-width: 60em;
+  border-top: 5px solid var(--red);
+  border-bottom: 5px solid var(--red);
+  border-radius: 10px;
 
   h1, h2 {
     font-family: serif;
@@ -84,7 +97,7 @@ export default {
 
   h1 {
     font-size: 2.4em;
-    margin: .5em 0;
+    margin: .5rem 0;
   }
 
   h2 {
@@ -93,10 +106,10 @@ export default {
   }
 
   section {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5rem;
 
     &:not(:last-of-type) {
-      padding-bottom: 1.5em;
+      padding-bottom: 1.5rem;
       border-bottom: 3px solid var(--red);
     }
 
@@ -107,10 +120,15 @@ export default {
   }
 
   .attributes {
+    font-size: 1.3em;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
-    padding: 0 3em;
+
+    @media screen and (max-width: 640px) {
+      font-size: 1em;
+      flex-wrap: wrap;
+    }
   }
 }
 </style>
