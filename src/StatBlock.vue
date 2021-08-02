@@ -1,84 +1,47 @@
 <template>
   <article class="stat-block">
     <section>
-      <h1>{{ title }}</h1>
-      <em>{{ description }}</em>
+      <h1>{{ data.title }}</h1>
+      <em>{{ data.description }}</em>
     </section>
 
     <section class="stats">
-      <SingleStat v-for="(stat, index) in primaryStats" :key="index" :name="stat.name" :value="stat.value" />
+      <SingleStat v-for="(stat, index) in data.primaryStats" :key="index" :name="stat.name" :value="stat.value" />
     </section>
 
     <section class="stats">
       <div class="attributes">
-        <SingleAttribute v-for="a in attributes" :key="a.attribute" :name="a.attribute" :value="a.value" />
+        <SingleAttribute v-for="a in data.attributes" :key="a.attribute" :name="a.attribute" :value="a.value" />
       </div>
     </section>
 
     <section class="stats">
-      <SingleStat v-for="(stat, index) in secondaryStats" :key="index" :name="stat.name" :value="stat.value" />
+      <SingleStat v-for="(stat, index) in data.secondaryStats" :key="index" :name="stat.name" :value="stat.value" />
     </section>
 
     <section>
-      <Block v-for="(block, index) in blocks" :key="index" :data="block" />
+      <Block v-for="(block, index) in data.blocks" :key="index" :data="block" />
     </section>
   </article>
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import {defineComponent, PropType} from "vue";
 import SingleStat from "./SingleStat.vue";
 import SingleAttribute from "./SingleAttribute.vue";
 import Block from "./Block.vue";
-
-type Stat = { name: string; value: string; };
+import {StatBlockData} from "./types";
 
 export default defineComponent({
   components: {Block, SingleAttribute, SingleStat},
-  data() {
-    return {
-      title: "Kréa (Fox)",
-      description: "Tiny beast, unaligned",
-      primaryStats: [
-        {name: "Armor Class", value: "13"},
-        {name: "Hit Points", value: "5 (2d4)"},
-        {name: "Speed", value: "30 ft., burrow 5ft."}
-      ],
-      secondaryStats: [
-        {name: "Skills", value: "Perception +3, Stealth +5"},
-        {name: "Senses", value: "Darkvision 60ft., passive Perception 13"},
-        {name: "Languages", value: "none"},
-        {name: "Challenge", value: "1/8 (10 XP)"}
-      ],
-      attributes: [
-        {attribute: "STR", value: 2},
-        {attribute: "DEX", value: 16},
-        {attribute: "CON", value: 11},
-        {attribute: "INT", value: 3},
-        {attribute: "WIS", value: 13},
-        {attribute: "CHA", value: 10}
-      ],
-      blocks: [
-        {
-          texts: [
-            '***Keen Hearing.*** The fox has advantage on Wisdom (Perception) checks that rely on hearing.'
-          ]
-        },
-        {
-          heading: 'Actions',
-          texts: [
-            '***Bite.*** *Melee weapon attack:* +5 to hit, react 5 ft., one creature. *Hit:* 1d4 piercing damage.'
-          ]
-        }
-      ]
-    }
+  props: {
+    data: {type: Object as PropType<StatBlockData>, required: true}
   }
 });
 </script>
 
 <style lang="scss">
 .stat-block {
-  --red: #700601;
   background-image: url(/parchment.jpg);
   background-size: cover;
   box-shadow: 0 0 10px 1px silver;
@@ -89,20 +52,12 @@ export default defineComponent({
   border-bottom: 5px solid var(--red);
   border-radius: 10px;
 
-  h1, h2 {
-    font-family: serif;
-    color: var(--red);
-    font-variant: small-caps;
-  }
-
   h1 {
+    font-family: serif;
     font-size: 2.4em;
+    font-variant: small-caps;
+    color: var(--red);
     margin: .5rem 0;
-  }
-
-  h2 {
-    font-size: 1.8em;
-    border-bottom: 2px solid var(--red);
   }
 
   section {

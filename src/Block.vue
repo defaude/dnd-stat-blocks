@@ -1,5 +1,5 @@
 <template>
-  <h2 v-if="data.heading">{{ data.heading }}</h2>
+  <h2 class="block-heading" v-if="data.heading">{{ data.heading }}</h2>
   <BlockText v-for="bt in data.texts" :key="bt" :value="bt" />
 </template>
 
@@ -20,3 +20,13 @@ export default defineComponent({
   }
 });
 </script>
+
+<style>
+.block-heading {
+  font-family: serif;
+  font-size: 1.8em;
+  font-variant: small-caps;
+  color: var(--red);
+  border-bottom: 2px solid var(--red);
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="attribute">
+  <div class="single-attribute">
     <div><strong>{{ name }}</strong></div>
     <div>{{ value }} ({{ modifier }})</div>
   </div>
@@ -34,7 +34,7 @@ export default defineComponent({
 </script>
 
 <style>
-.attribute {
+.single-attribute {
   margin: .5rem 1rem;
 }
 </style>
