@@ -1,6 +1,6 @@
 <template>
   <select v-model="selected">
-    <option :value="null" disabled>please select...</option>
+    <option :value="undefined" disabled>please select...</option>
     <option v-for="entity in entities" :key="entity.id" :value="entity.id">{{ entity.title }}</option>
   </select>
 </template>
@@ -20,7 +20,7 @@ export default defineComponent({
     const router = useRouter();
     const route = useRoute();
 
-    const selected = ref<Entity | null>(route.params.id || null);
+    const selected = ref(route.params.id || undefined);
 
     watch(() => route.params.id, newId => {
       selected.value = newId;
