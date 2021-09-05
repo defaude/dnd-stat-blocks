@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
-import {parseInline} from "marked";
+import marked from "marked";
 
 export default defineComponent({
   name: 'BlockText',
@@ -13,7 +13,7 @@ export default defineComponent({
   },
   computed: {
     html(): string {
-      return parseInline(this.value);
+      return marked(this.value);
     }
   }
 });
