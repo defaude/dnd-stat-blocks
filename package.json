@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "build:github": "vue-tsc --noEmit && vite build --base=/dnd-stat-blocks/",
     "serve": "vite preview"
   },
   "dependencies": {
