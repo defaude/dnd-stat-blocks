@@ -11,45 +11,40 @@ export default {
 
   setup() {
     const statBlock: StatBlockData = {
-      title: 'Nothic',
-      description: 'Medium aberration, neutral evil',
+      title: 'Skeleton',
+      description: 'Medium undead, lawful evil',
       primaryStats: [
-        { name: 'Armor Class', value: '15 (natural armor)' },
-        { name: 'Hit Points', value: '45 (6d8+18)' },
+        { name: 'Armor Class', value: '13 (armor scraps)' },
+        { name: 'Hit Points', value: '13 (2d8+4)' },
         { name: 'Speed', value: '30 ft.' }
       ],
       attributes: [
-        { attribute: 'STR', value: 14 },
-        { attribute: 'DEX', value: 16 },
-        { attribute: 'CON', value: 16 },
-        { attribute: 'INT', value: 13 },
-        { attribute: 'WIS', value: 10 },
-        { attribute: 'CHA', value: 8 }
+        { attribute: 'STR', value: 10 },
+        { attribute: 'DEX', value: 14 },
+        { attribute: 'CON', value: 15 },
+        { attribute: 'INT', value: 6 },
+        { attribute: 'WIS', value: 8 },
+        { attribute: 'CHA', value: 5 }
       ],
       secondaryStats: [
-        { name: 'Skills', value: 'Arcana + 3, Insight +4, Perception +2, Stealth +5' },
-        { name: 'Senses', value: 'truesight 120 ft., passive Perception 12' },
-        { name: 'Languages', value: 'Undercommon' },
-        { name: 'Challenge', value: '2 (450 XP)' }
+        { name: 'Damage Vulnerabilities', value: 'bludgeoning' },
+        { name: 'Damage Immunities', value: 'poison' },
+        { name: 'Condition Immunities', value: 'poisoned' },
+        { name: 'Senses', value: 'darkvision 60 ft., passive Perception 9' },
+        { name: 'Languages', value: 'understands languages it knew in life but can\'t speak' },
+        { name: 'Challenge', value: '1/4 (50 XP)' }
       ],
       blocks: [
         {
-          texts: [
-              '***Keen Sight.*** The nothic has advantage on Wisdom (Perception) checks that rely on sight.'
-          ]
-        },
-        {
           heading: 'Actions',
           texts: [
-            '***Multiattack.*** The nothic makes two attacks with its claws.',
-            '***Claws.*** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 6 (1d6+3) slashing damage.',
-            '***Rotting Gaze.*** The nothic chooses one creature within 30 feet of it that it can see. The target must succeed on a DC 12 Constitution saving throw against this magic or take 10 (3d6) necrotic damage.',
-            '***Weird Insight.*** The nothic chooses one creature within 30 feet of it that it can see. The target must contest its Charisma (Deception) check against the nothic\'s Wisdom (Insight) check. If the nothic wins, it magically learns one fact or secret about the creature. The target automatically wins if it is immune to being charmed.',
+            '***Shortsword.*** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 5 (1d6+2) piercing damage.',
+            '***Shortbow.*** *Ranged Weapon Attack:* +4 to hit, range 80 ft. / 320 ft., one target. *Hit:* 5 (1d6+2) piercing damage.',
           ]
         },
         {
           texts: [
-            'Nothics were once wizards who dared to unlock magical secrets they couldn\'t fathom. Though gifted with strange cosmic insight that allows them to extract knowledge from other creatures, nothics are no longer the wizards the once were and have no memories of their previous lives.'
+            'Assemblages of bones animated by dark magic, skeletons heed the summons of those who create them or rise of their own accord in places saturated with deathly magic.'
           ]
         }
       ]
