@@ -11,40 +11,43 @@ export default {
 
   setup() {
     const statBlock: StatBlockData = {
-      title: 'Skeleton',
-      description: 'Medium undead, lawful evil',
+      title: 'Goblin',
+      description: 'Small humanoid (goblinoid), neutral evil',
       primaryStats: [
-        { name: 'Armor Class', value: '13 (armor scraps)' },
-        { name: 'Hit Points', value: '13 (2d8+4)' },
+        { name: 'Armor Class', value: '15 (leather armor, shield)' },
+        { name: 'Hit Points', value: '7 (2d6)' },
         { name: 'Speed', value: '30 ft.' }
       ],
       attributes: [
-        { attribute: 'STR', value: 10 },
+        { attribute: 'STR', value: 8 },
         { attribute: 'DEX', value: 14 },
-        { attribute: 'CON', value: 15 },
-        { attribute: 'INT', value: 6 },
+        { attribute: 'CON', value: 10 },
+        { attribute: 'INT', value: 10 },
         { attribute: 'WIS', value: 8 },
-        { attribute: 'CHA', value: 5 }
+        { attribute: 'CHA', value: 8 }
       ],
       secondaryStats: [
-        { name: 'Damage Vulnerabilities', value: 'bludgeoning' },
-        { name: 'Damage Immunities', value: 'poison' },
-        { name: 'Condition Immunities', value: 'poisoned' },
+        { name: 'Skills', value: 'Stealth +6' },
         { name: 'Senses', value: 'darkvision 60 ft., passive Perception 9' },
-        { name: 'Languages', value: 'understands languages it knew in life but can\'t speak' },
+        { name: 'Languages', value: 'Common, Goblin' },
         { name: 'Challenge', value: '1/4 (50 XP)' }
       ],
       blocks: [
         {
+          texts: [
+              '***Nimble Escape.*** The goblin can take the Disengage or Hide action as a bonus action on each of its turns.'
+          ]
+        },
+        {
           heading: 'Actions',
           texts: [
-            '***Shortsword.*** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 5 (1d6+2) piercing damage.',
+            '***Scimitar.*** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 5 (1d6+2) slashing damage.',
             '***Shortbow.*** *Ranged Weapon Attack:* +4 to hit, range 80 ft. / 320 ft., one target. *Hit:* 5 (1d6+2) piercing damage.',
           ]
         },
         {
           texts: [
-            'Assemblages of bones animated by dark magic, skeletons heed the summons of those who create them or rise of their own accord in places saturated with deathly magic.'
+            'Goblins are black-hearted, gather in overwhelming numbers, and crave power, which they abuse.'
           ]
         }
       ]
