@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import { defineComponent } from 'vue';
 
 function getModifier(input: number): number {
   return Math.floor((input - 10) / 2);
@@ -15,8 +15,8 @@ function getModifier(input: number): number {
 export default defineComponent({
   name: 'SingleAttribute',
   props: {
-    name: {type: String, required: true},
-    value: {type: Number, required: true}
+    name: { type: String, required: true },
+    value: { type: Number, required: true }
   },
   computed: {
     modifierValue(): number {

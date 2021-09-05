@@ -26,16 +26,16 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from "vue";
-import SingleStat from "./SingleStat.vue";
-import SingleAttribute from "./SingleAttribute.vue";
-import Block from "./Block.vue";
-import {StatBlockData} from "./types";
+import { defineComponent, PropType } from 'vue';
+import SingleStat from './SingleStat.vue';
+import SingleAttribute from './SingleAttribute.vue';
+import Block from './Block.vue';
+import { StatBlockData } from '../types/StatBlockData';
 
 export default defineComponent({
-  components: {Block, SingleAttribute, SingleStat},
+  components: { Block, SingleAttribute, SingleStat },
   props: {
-    data: {type: Object as PropType<StatBlockData>, required: true}
+    data: { type: Object as PropType<StatBlockData>, required: true }
   }
 });
 </script>
@@ -47,7 +47,6 @@ export default defineComponent({
   box-shadow: 0 0 10px 1px silver;
   position: relative;
   padding: .5rem;
-  max-width: 60em;
   border-top: 5px solid var(--red);
   border-bottom: 5px solid var(--red);
   border-radius: 10px;
@@ -84,6 +83,23 @@ export default defineComponent({
       font-size: 1em;
       flex-wrap: wrap;
     }
+  }
+}
+
+@media print {
+  * {
+    visibility: hidden;
+  }
+
+  .stat-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
+
+  .stat-block, .stat-block * {
+    visibility: visible;
   }
 }
 </style>

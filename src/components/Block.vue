@@ -5,19 +5,15 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from "vue";
-import BlockText from "./BlockText.vue";
-
-export type BlockData = {
-  heading?: string;
-  texts: string[];
-}
+import { defineComponent, PropType } from 'vue';
+import BlockText from './BlockText.vue';
+import { BlockData } from '../types/BlockData';
 
 export default defineComponent({
   name: 'Block',
-  components: {BlockText},
+  components: { BlockText },
   props: {
-    data: {type: Object as PropType<BlockData>, required: true}
+    data: { type: Object as PropType<BlockData>, required: true }
   }
 });
 </script>
