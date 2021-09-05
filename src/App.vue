@@ -11,43 +11,44 @@ export default {
 
   setup() {
     const statBlock: StatBlockData = {
-      title: 'Goblin',
-      description: 'Small humanoid (goblinoid), neutral evil',
+      title: 'Bugbear',
+      description: 'Medium humanoid (goblinoid), chaotic evil',
       primaryStats: [
-        { name: 'Armor Class', value: '15 (leather armor, shield)' },
-        { name: 'Hit Points', value: '7 (2d6)' },
+        { name: 'Armor Class', value: '16 (hide armor, shield)' },
+        { name: 'Hit Points', value: '27 (5d8+5)' },
         { name: 'Speed', value: '30 ft.' }
       ],
       attributes: [
-        { attribute: 'STR', value: 8 },
+        { attribute: 'STR', value: 15 },
         { attribute: 'DEX', value: 14 },
-        { attribute: 'CON', value: 10 },
-        { attribute: 'INT', value: 10 },
-        { attribute: 'WIS', value: 8 },
-        { attribute: 'CHA', value: 8 }
+        { attribute: 'CON', value: 13 },
+        { attribute: 'INT', value: 8 },
+        { attribute: 'WIS', value: 11 },
+        { attribute: 'CHA', value: 9 }
       ],
       secondaryStats: [
-        { name: 'Skills', value: 'Stealth +6' },
-        { name: 'Senses', value: 'darkvision 60 ft., passive Perception 9' },
+        { name: 'Skills', value: 'Stealth +6, Survival +2' },
+        { name: 'Senses', value: 'darkvision 60 ft., passive Perception 10' },
         { name: 'Languages', value: 'Common, Goblin' },
-        { name: 'Challenge', value: '1/4 (50 XP)' }
+        { name: 'Challenge', value: '1 (200 XP)' }
       ],
       blocks: [
         {
           texts: [
-              '***Nimble Escape.*** The goblin can take the Disengage or Hide action as a bonus action on each of its turns.'
+              '***Brute.*** When the bugbear hits with a melee weapon attack, the attack deals one extra die of the weapon\'s damage to the target (included below).',
+              '***Surprise Attack.*** If the bugbear surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack.'
           ]
         },
         {
           heading: 'Actions',
           texts: [
-            '***Scimitar.*** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 5 (1d6+2) slashing damage.',
-            '***Shortbow.*** *Ranged Weapon Attack:* +4 to hit, range 80 ft. / 320 ft., one target. *Hit:* 5 (1d6+2) piercing damage.',
+            '***Morningstar.*** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 11 (2d8+2) piercing damage.',
+            '***Javelin.*** *Melee or Ranged Weapon Attack:* +4 to hit, reach 5 ft. or range 30 ft. / 120 ft., one target. *Hit:* 5 (1d6+2) piercing damage or 9 (2d6+2) piercing damage in melee.',
           ]
         },
         {
           texts: [
-            'Goblins are black-hearted, gather in overwhelming numbers, and crave power, which they abuse.'
+            'Bugbears are cruel and unruly humanoids that live to bully the weak and dislike being bossed around. Despite their intimidating builds, bugbears move with surprising stealth and are fond of setting ambushes.'
           ]
         }
       ]
