@@ -1,6 +1,6 @@
 import { StatBlockData } from '../types/StatBlockData';
 
-export const skeleton: StatBlockData = {
+const skeleton: StatBlockData = {
     id: 'skeleton',
     title: 'Skeleton',
     description: 'Medium undead, lawful evil',
@@ -40,3 +40,5 @@ export const skeleton: StatBlockData = {
         }
     ]
 };
+
+export default skeleton;

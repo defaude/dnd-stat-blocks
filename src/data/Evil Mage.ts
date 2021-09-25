@@ -1,6 +1,6 @@
 import { StatBlockData } from '../types/StatBlockData';
 
-export const evilMage: StatBlockData = {
+const evilMage: StatBlockData = {
     id: 'evil-mage',
     title: 'Evil Mage',
     description: 'Medium humanoid (human), lawful evil',
@@ -43,3 +43,5 @@ export const evilMage: StatBlockData = {
         }
     ]
 };
+
+export default evilMage;

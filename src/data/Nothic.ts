@@ -1,6 +1,6 @@
 import { StatBlockData } from '../types/StatBlockData';
 
-export const nothic: StatBlockData = {
+const nothic: StatBlockData = {
     id: 'nothic',
     title: 'Nothic',
     description: 'Medium aberration, neutral evil',
@@ -45,3 +45,5 @@ export const nothic: StatBlockData = {
         }
     ]
 };
+
+export default nothic;

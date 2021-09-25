@@ -1,8 +1,8 @@
 import { StatBlockData } from '../types/StatBlockData';
 
-export const krea: StatBlockData = {
-    id: 'krea',
-    title: 'Kréa (Fox)',
+const fox: StatBlockData = {
+    id: 'fox',
+    title: 'Fox',
     description: 'Tiny beast, unaligned',
     primaryStats: [
         { name: 'Armor Class', value: '13' },
@@ -37,3 +37,5 @@ export const krea: StatBlockData = {
         }
     ]
 };
+
+export default fox;

@@ -1,6 +1,6 @@
 import { StatBlockData } from '../types/StatBlockData';
 
-export const bugbear: StatBlockData = {
+const bugbear: StatBlockData = {
     id: 'bugbear',
     title: 'Bugbear',
     description: 'Medium humanoid (goblinoid), chaotic evil',
@@ -44,3 +44,5 @@ export const bugbear: StatBlockData = {
         }
     ]
 };
+
+export default bugbear;

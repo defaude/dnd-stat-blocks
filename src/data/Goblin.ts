@@ -1,6 +1,6 @@
 import { StatBlockData } from '../types/StatBlockData';
 
-export const goblin: StatBlockData = {
+const goblin: StatBlockData = {
     id: 'goblin',
     title: 'Goblin',
     description: 'Small humanoid (goblinoid), neutral evil',
@@ -43,3 +43,5 @@ export const goblin: StatBlockData = {
         }
     ]
 };
+
+export default goblin;

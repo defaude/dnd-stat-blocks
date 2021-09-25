@@ -1,6 +1,6 @@
 import { StatBlockData } from '../types/StatBlockData';
 
-export const redbrandRuffian: StatBlockData = {
+const redbrandRuffian: StatBlockData = {
     id: 'redbrand-ruffian',
     title: 'Redbrand Ruffian',
     description: 'Medium humanoid (human), neutral evil',
@@ -38,3 +38,5 @@ export const redbrandRuffian: StatBlockData = {
         }
     ]
 };
+
+export default redbrandRuffian;
