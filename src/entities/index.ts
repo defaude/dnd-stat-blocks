@@ -1,11 +1,11 @@
-import { bugbear } from './bugbear';
 import { StatBlockData } from '../types/StatBlockData';
-import { krea } from './krea (fox)';
-import { evilMage } from './evil-mage';
-import { goblin } from './goblin';
-import { nothic } from './nothic';
-import { redbrandRuffian } from './redbrand-ruffian';
-import { skeleton } from './skeleton';
+import { bugbear } from './Bugbear';
+import { krea } from './Krea (Fox)';
+import { evilMage } from './Evil Mage';
+import { goblin } from './Goblin';
+import { nothic } from './Nothic';
+import { redbrandRuffian } from './Redbrand Ruffian';
+import { skeleton } from './Skeleton';
 
 export const entities: StatBlockData[] = [
     krea,
